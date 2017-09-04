@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="welcomeAnchorPane" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kamilj.animalShelter.controller.MainController">
+   <children>
+      <Button fx:id="openAppButton" layoutX="358.0" layoutY="73.0" mnemonicParsing="false" onAction="#openApp" prefHeight="105.0" prefWidth="385.0" text="Open App" />
+      <Button fx:id="openStaffOnlyButton" layoutX="358.0" layoutY="248.0" mnemonicParsing="false" onAction="#openStaffOnlyPage" prefHeight="105.0" prefWidth="385.0" text="Staff Only" />
+      <Button fx:id="closeAppButton" layoutX="358.0" layoutY="425.0" mnemonicParsing="false" onAction="#closeApp" prefHeight="105.0" prefWidth="385.0" text="Close App" />
+   </children>
+</AnchorPane>
