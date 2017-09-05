@@ -58,16 +58,7 @@ public class StaffOnlyController {
     @FXML
     public void initialize() {
         fillUpChoiceBoxes();
-        createExampleAnimals();
         loadDataFromDatabase();
-    }
-
-    private void createExampleAnimals(){
-        AnimalHbmDAO animalHbmDAO = new AnimalHbmDAO();
-        Animal dog = new Animal("Dog", "Good");
-        Animal cat = new Animal("Cat", "Very bad");
-        animalHbmDAO.create(dog);
-        animalHbmDAO.create(cat);
     }
 
     private void fillUpChoiceBoxes(){

@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="adoptionAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kamilj.animalShelter.controller.AdoptionController">
+<AnchorPane fx:id="adoptionAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kamilj.animalShelter.controller.AdoptionController">
    <children>
-      <TableView fx:id="animalsTable" editable="true" prefHeight="600.0" prefWidth="1100.0">
+      <TableView fx:id="animalsTable" editable="true" layoutX="75.0" layoutY="168.0" prefHeight="384.0" prefWidth="502.0">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <columns>
             <TableColumn fx:id="id" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="ID" />
             <TableColumn fx:id="species" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Species" />
-            <TableColumn fx:id="healthStatus" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Helth Status" />
+            <TableColumn fx:id="healthStatus" maxWidth="251.0" minWidth="200.0" prefWidth="251.0" text="Helth Status" />
          </columns>
       </TableView>
+      <Label fx:id="adoptionLabel" alignment="CENTER" layoutX="289.0" layoutY="34.0" prefHeight="88.0" prefWidth="522.0" text="Adoption">
+         <font>
+            <Font size="71.0" />
+         </font>
+      </Label>
+      <Button fx:id="adoptButton" layoutX="700.0" layoutY="196.0" mnemonicParsing="false" onAction="#adopt" prefHeight="104.0" prefWidth="319.0" text="Adopt">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Button>
+      <Label fx:id="statusLabel" alignment="CENTER" layoutX="811.0" layoutY="360.0" prefHeight="68.0" prefWidth="230.0" textFill="RED">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
