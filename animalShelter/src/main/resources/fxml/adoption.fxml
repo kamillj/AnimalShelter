@@ -29,9 +29,14 @@
             <Font size="41.0" />
          </font>
       </Button>
-      <Label fx:id="statusLabel" alignment="CENTER" layoutX="811.0" layoutY="360.0" prefHeight="68.0" prefWidth="230.0" textFill="RED">
+      <Label fx:id="statusLabel" alignment="CENTER_RIGHT" layoutX="789.0" layoutY="350.0" prefHeight="68.0" prefWidth="230.0" textFill="RED">
          <font>
             <Font size="34.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusDescripionLabel" alignment="CENTER_RIGHT" layoutX="673.0" layoutY="407.0" prefHeight="68.0" prefWidth="346.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
    </children>

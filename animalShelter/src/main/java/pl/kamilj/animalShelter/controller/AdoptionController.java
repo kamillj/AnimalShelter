@@ -43,6 +43,9 @@ public class AdoptionController{
     private Label statusLabel;
 
     @FXML
+    private Label statusDescripionLabel;
+
+    @FXML
     public void initialize() {
         loadDataFromDatabase();
     }
@@ -61,7 +64,14 @@ public class AdoptionController{
     public void adopt(){
         Animal animal;
         animal = animalsTable.getSelectionModel().getSelectedItem();
-        animalHbmDAO.delete(animal);
-        loadDataFromDatabase();
+        if(animalsTable.getSelectionModel().isEmpty()){
+            statusLabel.setText("FAILED");
+            statusDescripionLabel.setText("Please select an animal");
+        } else {
+            animalHbmDAO.delete(animal);
+            loadDataFromDatabase();
+            statusDescripionLabel.setText("");
+            statusLabel.setText("SUCCESS");
+        }
     }
 }
