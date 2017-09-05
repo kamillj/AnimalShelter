@@ -13,14 +13,8 @@ import pl.kamilj.animalShelter.hibernate.dao.AnimalHbmDAO;
 
 public class AddingToAdoptionController {
 
-    ObservableList<String> speciesList = FXCollections.observableArrayList();
-    ObservableList<String> healthStatusList = FXCollections.observableArrayList();
-
-    AnimalHbmDAO animalHbmDAO = new AnimalHbmDAO();
-    Animal animal = new Animal();
-
-    private String species;
-    private String healthStatus;
+    private AnimalHbmDAO animalHbmDAO = new AnimalHbmDAO();
+    private Animal animal = new Animal();
 
     @FXML
     private Button giveToAdoptionButton;
@@ -48,6 +42,13 @@ public class AddingToAdoptionController {
 
     @FXML
     void initialize() {
+        fillUpChoiceBoxes();
+        createExampleAnimals();
+    }
+
+    private void fillUpChoiceBoxes(){
+        ObservableList<String> speciesList = FXCollections.observableArrayList();
+        ObservableList<String> healthStatusList = FXCollections.observableArrayList();
         healthStatusList.add(0, "Very good");
         healthStatusList.add(1, "Good");
         healthStatusList.add(2, "Medium");
@@ -64,14 +65,20 @@ public class AddingToAdoptionController {
         healthStatusChoiceBox.setItems(healthStatusList);
     }
 
+    private void createExampleAnimals() {
+        AnimalHbmDAO animalHbmDAO = new AnimalHbmDAO();
+        Animal dog = new Animal("Dog", "Good");
+        Animal cat = new Animal("Cat", "Very bad");
+        animalHbmDAO.create(dog);
+        animalHbmDAO.create(cat);
+    }
+
     public void giveToAdoption() {
 
-        species = speciesChoiceBox.getValue();
-        healthStatus = healthStatusChoiceBox.getValue();
+        String species = speciesChoiceBox.getValue();
+        String healthStatus = healthStatusChoiceBox.getValue();
         animal.setSpecies(species);
         animal.setHealthStatus(healthStatus);
         animalHbmDAO.create(animal);
-
-        HibernateUtil.shutdown();
     }
 }

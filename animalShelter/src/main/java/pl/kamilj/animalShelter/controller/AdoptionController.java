@@ -14,8 +14,6 @@ import java.util.List;
 
 public class AdoptionController{
 
-    public ObservableList<Animal> animalsData;
-
     @FXML
     private AnchorPane adoptionAnchorPane;
 
@@ -44,7 +42,7 @@ public class AdoptionController{
         animalHbmDAO.create(cat);
 
         List<Animal> animals = animalHbmDAO.findAll();
-        animalsData = FXCollections.observableArrayList(animals);
+        ObservableList<Animal> animalsData = FXCollections.observableArrayList(animals);
 
         animalsTable.getItems().addAll(animalsData);
         id.setCellValueFactory(new PropertyValueFactory<>("id"));

@@ -11,8 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-
-
 import java.io.IOException;
 
 
@@ -30,7 +28,6 @@ public class LoginController {
 
     @FXML
     void initialize() {
-
         EventHandler<ActionEvent> handler = new EventHandler<ActionEvent>() {
 
             @Override
@@ -39,9 +36,7 @@ public class LoginController {
                 if (!(loginField.getText().equals("user") && passwordField.getText().equals("user"))) {
                     loginStatusLabel.setText("Login FAILED");
                 } else {
-                    loginStatusLabel.setText("Login SUCCESS");
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/staffOnly.fxml"));
                     AnchorPane mainPageAnchorPage = null;
                     try {
                         mainPageAnchorPage = loader.load();
