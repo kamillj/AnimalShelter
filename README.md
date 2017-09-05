@@ -1,0 +1,2 @@
+# animalShelter
+AnimalShelter is a window application where you can give animal to shelter or adopt its. In this program you can adopt an animal from shelter, which will cause deleting animal from database. In adoption section you can choose what kind of animal you want give to adoption (species and health status) or choose animal from existing posisions from database. Staff can modify database using add and delete operations. This project was realized using JavaFX and Hibernate.
